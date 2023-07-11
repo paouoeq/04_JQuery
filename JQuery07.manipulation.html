@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#append").on("click", function(){
+                $("#result").append("<h1>홍길동</h1>");
+            });
+
+
+
+            $("#prepend").on("click", function(){
+                $("#result").prepend("<h1>홍길동</h1>");
+            });
+
+
+
+            $("#before").on("click", function(){
+                $("#result").before("<h1>홍길동</h1>");
+            });
+
+
+
+            $("#after").on("click", function(){
+                $("#result").after("<h1>홍길동</h1>");
+            });
+
+
+
+            $("#replaceWith").on("click", function(){
+                $("#result").replaceWith("<h1>홍길동</h1>");
+            });
+
+
+            
+            $("#remove").on("click", function(){
+                $("#result").remove();
+            });
+
+
+
+            $("#empty").on("click", function(){
+                $("#result").empty();
+            });
+            
+            
+        });
+        
+
+    </script>
+</head>
+<body>
+    <div id="result">
+        <p>Hello</p>
+    </div>
+    <button id="append">append</button><br>
+    <button id="prepend">prepend</button><br>
+    <button id="before">before</button><br>
+    <button id="after">after</button><br>
+    <button id="replaceWith">replaceWith</button><br>
+    <button id="remove">remove</button><br>
+    <button id="empty">empty</button><br>
+    <hr/>
+</body>
+</html>

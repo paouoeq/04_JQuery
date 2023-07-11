@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            // $.each() : 배열 데이터 관련된 유틸리티 메서드
+            var months = [ 'January', 'February', 'March', 'April', 'May',
+			'June', 'July', 'August', 'September', 'October',
+			'November', 'December' ];
+
+            $.each(months, function(index, object) {  // 단순 반복처리
+                console.log(index,object);
+            });
+
+            console.log("================");
+            
+            $.each(months, function(index, object) {  // 단순 반복처리
+                console.log(index,object);
+                
+                return object != 'March';
+            });
+
+            console.log("================");
+
+            // $.grep() : 필터링 후 배열로 반환. 필터링 조건은 fun에서 return 참조건; 형식 사용.
+            var arr = $.grep(months, function(obj, idx){
+                console.log(idx, obj);
+                return obj.length >= 5;
+            });
+            console.log(arr);
+
+            console.log("================");
+
+            // $.map() : 원본 배열에 fun 함수를 적용해서 가공 후 반환
+            var arr2 = $.map(months, function(obj, idx){
+                console.log(idx, obj);
+                return obj.substr(0,3);
+            });
+            console.log(arr2);
+            
+        });
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
