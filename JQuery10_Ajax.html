@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+        // DOM Tree가 모두 완료된 후 호출
+        $(document).ready(function(){
+
+            $("#ok").on("click", function(){
+
+                // https://reqres.in/api/users?page=2 비동기 요청
+                $.ajax({
+
+                    // 요청코드
+                    type:"get",
+                    url:"https://reqres.in/api/users",
+                    data:{
+                        page:2
+                    },
+
+                    // 응답코드
+                    dataType:'text',
+                    success:function(data, satatus, xhr) { // 성공했을 때 data변수에 data 저장됨
+                        console.log(data);
+                        $("#result").text(data);
+                    },
+                    error:function(xhr, status, error) {
+                        console.log("에러발생");
+                    }
+
+
+                });
+
+            });
+            
+        });
+        
+
+    </script>
+</head>
+<body>
+    <button id="ok">요청</button><br>
+    <div id="result"></div>
+</body>
+</html>

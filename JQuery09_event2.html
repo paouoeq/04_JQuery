@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+        // DOM Tree가 모두 완료된 후 호출
+        $(document).ready(function(){
+
+            $("#ok").on("click", function(){
+                $("div").html("<button id='x'>ok</botton>");
+            });
+
+            /*
+            $("#x").on("click", function(){
+                console.log("ok"); // 동적으로 추가되었기 때문에 출력이 안됨
+            })
+            */
+            
+            $("body").on("click", "#x", function(){ // 동적 추가 항목에 대한 이벤트 처리 방법
+                console.log("ok");                  //    -> 이벤트타입 뒤에 생성자를 넣기
+            });
+        });
+        
+
+    </script>
+</head>
+<body>
+    <button id="ok">버튼추가</button><br>
+    <div></div>
+</body>
+</html>
